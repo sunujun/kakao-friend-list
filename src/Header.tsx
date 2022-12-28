@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const IconButton = props => {
+const IconButton = (props: { name: string }) => {
     return (
         <View style={{ paddingHorizontal: 6 }}>
             <Ionicons name={props.name} size={24} color="black" />
