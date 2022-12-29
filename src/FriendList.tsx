@@ -10,10 +10,11 @@ const FriendList = (props: {
         name: string;
         introduction: string;
     }[];
+    isOpened: boolean;
 }) => {
     const insets = useSafeAreaInsets();
 
-    return (
+    return props.isOpened ? (
         <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: insets.bottom }}>
             {props.data.map((data, index) => (
                 <View>
@@ -22,6 +23,8 @@ const FriendList = (props: {
                 </View>
             ))}
         </ScrollView>
+    ) : (
+        <></>
     );
 };
 

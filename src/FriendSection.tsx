@@ -3,6 +3,7 @@ import { GestureResponderEvent, Text, TouchableOpacity, View } from 'react-nativ
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const FriendSection = (props: {
+    isOpened: boolean;
     friendProfileLength: number;
     onPress: ((event: GestureResponderEvent) => void) | undefined;
 }) => {
@@ -10,7 +11,11 @@ const FriendSection = (props: {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <Text>친구 {props.friendProfileLength}</Text>
             <TouchableOpacity onPress={props.onPress}>
-                <MaterialIcons name="keyboard-arrow-down" size={24} color="black" />
+                <MaterialIcons
+                    name={props.isOpened ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
+                    size={24}
+                    color="black"
+                />
             </TouchableOpacity>
         </View>
     );
