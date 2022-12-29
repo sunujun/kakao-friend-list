@@ -15,7 +15,7 @@ const FriendList = (props: {
         <ScrollView showsVerticalScrollIndicator={false}>
             {props.data.map((data, index) => (
                 <View key={index.toString()}>
-                    <Profile uri={data.uri} name={data.name} introduction={data.introduction} />
+                    <Profile uri={data.uri} name={data.name} introduction={data.introduction} isMe={false} />
                     <Margin height={13} />
                 </View>
             ))}
