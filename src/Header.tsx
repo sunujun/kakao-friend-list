@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const IconButton = (props: { name: string }) => {
     return (
-        <View style={{ paddingHorizontal: 6 }}>
+        <TouchableOpacity hitSlop={{ top: 15, bottom: 15 }} style={{ paddingHorizontal: 6 }}>
             <Ionicons name={props.name} size={24} color="black" />
-        </View>
+        </TouchableOpacity>
     );
 };
 

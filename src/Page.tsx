@@ -64,7 +64,7 @@ const Page = () => {
     const ListFooterComponent = () => <Margin height={10} />;
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { paddingTop: insets.top }]}>
             <FlatList
                 data={isOpened ? friendProfiles : []}
                 contentContainerStyle={{ paddingHorizontal: 15 }}
@@ -74,6 +74,7 @@ const Page = () => {
                 renderItem={renderItem}
                 ListHeaderComponent={ListHeaderComponent}
                 ListFooterComponent={ListFooterComponent}
+                overScrollMode="never"
             />
             <TabBar selectedTabIndex={selectedTabIndex} setSelectedTabIndex={setSelectedTabIndex} />
         </View>
